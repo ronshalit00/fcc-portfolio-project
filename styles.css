@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --background-clr: #004643;
+    --headline-clr: #fffffe;
+    --paragraph-clr: #abd1c6;
+    --button-back: #f9bc60;
+    --button-text: #001e1d;
+    --secondary-clr: #abd1c6;
+    --gradient: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+    --gradient2: background-image: linear-gradient(
+        45deg,
+        hsl(182deg 84% 87%) 0%,
+        hsl(181deg 82% 86%) 9%,
+        hsl(179deg 81% 85%) 18%,
+        hsl(178deg 82% 84%) 28%,
+        hsl(177deg 82% 83%) 37%,
+        hsl(175deg 83% 82%) 46%,
+        hsl(174deg 83% 81%) 54%,
+        hsl(172deg 83% 80%) 63%,
+        hsl(171deg 84% 79%) 72%,
+        hsl(169deg 84% 78%) 81%,
+        hsl(168deg 84% 77%) 89%,
+        hsl(166deg 83% 76%) 100%
+      );
+}
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+#navbar {
+    position: fixed;
+    background-color: var(--button-back);
+    width: 100%;
+    height: 60px;
+    top: 0;
+    z-index: 999;
+}
+a {
+    text-decoration: none;
+}
+#navbar ul {
+    list-style-type: none;
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    padding-right: 20px;
+    align-items: center;
+    height: 100%;
+}
+#navbar a {
+    color: var(--button-text);
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+#navbar a:hover {
+    color: var(--headline-clr);
+}
+main {
+    margin-top: 60px;
+}
+#welcome-section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--background-clr);
+}
+.heading {
+    color: var(--headline-clr);
+    font-size: 8rem;
+    line-height: 0.9;
+}
+
+#txt-clr:hover {
+    color: orangered;
+}
+#welcome-section p {
+    color: var(--paragraph-clr);
+    font-size: 2rem;
+    font-style: italic;
+}
+#projects {
+    background-color: var(--secondary-clr);
+    padding-bottom: 2rem;
+}
+#projects h2 {
+    text-align: center;
+    padding: 2rem;
+    color: #fff;
+    font-size: 2rem;
+}
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.project-tile {
+    flex-basis: 400px;
+    flex-shrink: 1;
+    text-align: center;
+    background-color: var(--button-text);
+    padding: 20px;
+    color: var(--headline-clr);
+    transition: all .2s ease-in-out;
+}
+.project-tile:hover {
+    transform: scale(1.05);
+    color: var(--button-back);
+}
+.project-tile img {
+    aspect-ratio: 1 / 1;
+    max-width: 350px;
+    max-height: 350px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+#contact {
+    height: calc(100vh - 60px);
+    background-color: var(--background-clr);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+#cont-text p {
+    text-align: center;
+    font-size: 1.6rem;
+    color: var(--paragraph-clr);
+}
+#profile-link img {
+    width: 20px;
+    display: inline;
+}
+#profile-link {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    color: var(--paragraph-clr);
+}
+#profile-link:hover {
+    color: var(--button-back);
+    font-weight: 900;
+}
+
+footer {
+    height: 60px;
+    width: 100%;
+    background-color: var(--button-back);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--button-text);
+}
+footer a {
+    color: var(--button-text);
+    font-weight: 900;
+}
+footer a:hover {
+    color: var(--headline-clr);
+}
+
+@media screen and (max-width: 480px) {
+    #navbar {
+        position: relative;
+        height: 45px;
+    }
+    #navbar a {
+        font-size: 1rem;
+    }
+    main {
+        margin: 0;
+    }
+    .heading {
+        font-size: 5rem;
+    }
+    #welcome-section p {
+        align-self: flex-end;
+        padding-right: 10px;
+    }
+    #welcome-section {
+        justify-content: center;
+        height: calc(100vh - 45px);
+    }
+    #contact {
+        height:100vh;
+    }
+    .project-tile {
+        max-width: 300px;
+    }
+    .project-tile img {
+        max-width: 300px;
+    }
+}
